@@ -56,19 +56,22 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\podInputScript.cs" />
     <Compile Include="Assets\Scripts\ufo\ufoHover.cs" />
+    <Compile Include="Assets\Scripts\treeScript.cs" />
+    <Compile Include="Assets\tankScript.cs" />
+    <Compile Include="Assets\winScript.cs" />
+    <Compile Include="Assets\PodAttackScript.cs" />
+    <Compile Include="Assets\tutorialScript.cs" />
     <Compile Include="Assets\Scripts\ufo\EnemyHitBox.cs" />
     <Compile Include="Assets\Scripts\Player\Aim2.cs" />
     <Compile Include="Assets\Scripts\Player\rayCastShoot.cs" />
+    <Compile Include="Assets\grassScript.cs" />
+    <Compile Include="Assets\loadLevel.cs" />
     <Compile Include="Assets\Scripts\ufo\Ufo_Beam.cs" />
     <Compile Include="Assets\Scripts\Player\player_Movement.cs" />
     <Compile Include="Assets\Scripts\ufo\Ufo_Sight.cs" />
     <Compile Include="Assets\Scripts\Player\gunAim.cs" />
-    <Compile Include="Assets\Scripts\treeScript.cs" />
-    <Compile Include="Assets\podInputScript.cs" />
-    <Compile Include="Assets\PodAttackScript.cs" />
-    <Compile Include="Assets\winScript.cs" />
-    <Compile Include="Assets\grassScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

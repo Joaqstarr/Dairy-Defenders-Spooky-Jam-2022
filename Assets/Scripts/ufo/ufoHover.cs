@@ -27,9 +27,10 @@ public class ufoHover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camState = GameObject.Find("CameraController").GetComponent<Animator>();
         sfx = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
-        
+        player = GameObject.Find("PlayerCow").transform;
     }
 
     // Update is called once per frame
@@ -71,7 +72,9 @@ public class ufoHover : MonoBehaviour
             hoverX = lastKnownPlayerPos.x;
             hoverY = hoverheight;
             hoverZ = lastKnownPlayerPos.z;
-            if(new Vector3(transform.position.x,hoverheight,transform.position.z) == new Vector3(lastKnownPlayerPos.x, hoverheight, lastKnownPlayerPos.z))
+            //Debug.Log();
+            //Debug.Log();
+            if((new Vector3(lastKnownPlayerPos.x, hoverheight, lastKnownPlayerPos.z) - new Vector3(transform.position.x, hoverheight, transform.position.z)).magnitude <5)
             {
                 aiState.SetTrigger("searched");
                 found = false;
@@ -112,7 +115,7 @@ public class ufoHover : MonoBehaviour
 
     void checkPatrol()
     {
-        if( transform.position == new Vector3(patrolPoints[targPoint].position.x, hoverheight, patrolPoints[targPoint].position.z))
+        if((transform.position - new Vector3(patrolPoints[targPoint].position.x, hoverheight, patrolPoints[targPoint].position.z)).magnitude < 5)
         {
             if(targPoint != patrolPoints.Length -1)
             {
@@ -120,7 +123,6 @@ public class ufoHover : MonoBehaviour
             }
             else
             {
-                
                 targPoint = 0;
             }
         }

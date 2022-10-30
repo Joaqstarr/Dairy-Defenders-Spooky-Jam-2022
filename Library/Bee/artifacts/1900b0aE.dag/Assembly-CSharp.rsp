@@ -387,6 +387,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/grassScript.cs"
+"Assets/loadLevel.cs"
 "Assets/PodAttackScript.cs"
 "Assets/podInputScript.cs"
 "Assets/Scripts/Player/Aim2.cs"
@@ -398,6 +399,8 @@
 "Assets/Scripts/ufo/ufoHover.cs"
 "Assets/Scripts/ufo/Ufo_Beam.cs"
 "Assets/Scripts/ufo/Ufo_Sight.cs"
+"Assets/tankScript.cs"
+"Assets/tutorialScript.cs"
 "Assets/winScript.cs"
 -langversion:9.0
 

@@ -8,6 +8,10 @@ public class winScript : MonoBehaviour
     GameObject podHolder;
     public int health = 1;
     bool won = false;
+    [SerializeField]
+    Animator camState;
+    [SerializeField]
+    GameObject winUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,8 @@ public class winScript : MonoBehaviour
     }
     void Win()
     {
+        camState.SetTrigger("win");
+        winUI.SetActive(true);
         //win stuff
         Debug.Log("win!!");
     }

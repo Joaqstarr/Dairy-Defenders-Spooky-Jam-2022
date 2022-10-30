@@ -77,6 +77,8 @@ public class grassScript : MonoBehaviour
 
     void Eat()
     {
+        player.GetComponent<player_Movement>().Sneaking -= 1;
+
         player.GetComponent<Aim2>().barrels.GetComponent<rayCastShoot>().Ammo += ammo;
         Destroy(gameObject);
     }
