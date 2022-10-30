@@ -18,13 +18,16 @@ public class ufoHover : MonoBehaviour
     public Animator camState;
     public Transform player;
     public Vector3 lastKnownPlayerPos;
+    bool found = false;
     NavMeshAgent agent;
+    AudioSource sfx;
     Vector3 movePos;
 
     Vector3 playerPos;
     // Start is called before the first frame update
     void Start()
     {
+        sfx = GetComponent<AudioSource>();
         agent = GetComponent<NavMeshAgent>();
         
     }
@@ -43,16 +46,22 @@ public class ufoHover : MonoBehaviour
              hoverX = patrolPoints[targPoint].position.x;
              hoverY = hoverheight;
              hoverZ = patrolPoints[targPoint].position.z;
+            found = false;
+
         }
 
         //aggro State
         if (aiState.GetCurrentAnimatorStateInfo(0).IsName("aggro"))
         {
+            if(found == false)
+            {
+                sfx.Play();
+            }
             speed = huntSpeed;
             hoverX = player.position.x;
             hoverY = hoverheight;
             hoverZ = player.position.z;
-
+            found = true;
         }
 
         //search State
@@ -65,6 +74,7 @@ public class ufoHover : MonoBehaviour
             if(new Vector3(transform.position.x,hoverheight,transform.position.z) == new Vector3(lastKnownPlayerPos.x, hoverheight, lastKnownPlayerPos.z))
             {
                 aiState.SetTrigger("searched");
+                found = false;
             }
         }
         //kill State

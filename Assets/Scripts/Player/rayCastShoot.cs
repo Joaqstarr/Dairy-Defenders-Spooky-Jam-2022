@@ -25,12 +25,16 @@ public class rayCastShoot : MonoBehaviour
     CinemachineImpulseSource shake;
     [SerializeField]
     float fadeSpeed = 10;
+    AudioSource sfx;
+
 
     [Header("for now not needed")]
     private float nextFire;
     // Start is called before the first frame update
     void Start()
     {
+        sfx = GetComponent<AudioSource>();
+
         laserLine = GetComponent<LineRenderer>();
         shake = GetComponent<CinemachineImpulseSource>();
     }
@@ -52,7 +56,8 @@ public class rayCastShoot : MonoBehaviour
     {
         if (Ammo >= 100)
         {
-            shake.GenerateImpulseAt(fpsCamera.transform.position, new Vector3(0.2f, 0.2f, 0.2f));
+            sfx.Play();
+            shake.GenerateImpulseAt(fpsCamera.transform.position, new Vector3(0.4f, 0.4f, 0.4f));
             StartCoroutine(ShotEffect());
             isShooting = true;
             //Start particle will be here 
