@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class ufoHover : MonoBehaviour
 {
@@ -16,12 +18,14 @@ public class ufoHover : MonoBehaviour
     public Animator camState;
     public Transform player;
     public Vector3 lastKnownPlayerPos;
+    NavMeshAgent agent;
     Vector3 movePos;
 
     Vector3 playerPos;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         
     }
 
@@ -72,11 +76,12 @@ public class ufoHover : MonoBehaviour
         }
 
 
-         movePos = new Vector3(hoverX, hoverY, hoverZ);
+         movePos = new Vector3(hoverX, 0, hoverZ);
 
-        CheckCourse();
-
-        transform.position = Vector3.MoveTowards(transform.position,movePos, speed * Time.deltaTime);
+        //CheckCourse();
+        agent.speed = speed;
+        agent.destination = movePos;
+        //transform.position = Vector3.MoveTowards(transform.position,movePos, speed * Time.deltaTime);
     }
 
     void CheckCourse()

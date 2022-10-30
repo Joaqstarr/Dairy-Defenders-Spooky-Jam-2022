@@ -31,14 +31,14 @@ public class Ufo_Sight : MonoBehaviour
         if (Physics.Raycast(transform.parent.position, -dir, out hit, Mathf.Infinity,rayMask) && hit.transform.gameObject.tag == "Player")
         {
             lastPlayerPos = player.transform.position;
-            Debug.DrawRay(transform.parent.position, -dir * 100, Color.yellow,1f);
-            Debug.Log(hit.transform);
+           // Debug.DrawRay(transform.parent.position, -dir * 100, Color.yellow,1f);
+           // Debug.Log(hit.transform);
             InSight();
             // Debug.DrawRay(transform.position, dir, Color.yellow);
         }
         else
         {
-            Debug.DrawRay(transform.parent.position, -dir * 1000, Color.red, 1f);
+          //  Debug.DrawRay(transform.parent.position, -dir * 1000, Color.red, 1f);
             //Debug.Log(hit.transform);
             Hidden(lastPlayerPos);
         }
