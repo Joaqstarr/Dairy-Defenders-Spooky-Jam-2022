@@ -21,6 +21,7 @@ public class player_Movement : MonoBehaviour
     public GameObject ufoAttacker;
     public float beamSpeed = 5;
     Animator animControl;
+    public int Sneaking = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (beamed == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, ufoAttacker.transform.position, beamSpeed * Time.deltaTime);
@@ -86,4 +88,5 @@ public class player_Movement : MonoBehaviour
             
         }
     }
+
 }

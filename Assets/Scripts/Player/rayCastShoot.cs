@@ -23,8 +23,6 @@ public class rayCastShoot : MonoBehaviour
     public int Ammo = 100;
     public LayerMask ufoLayer;
     CinemachineImpulseSource shake;
-    [SerializeField]
-    float fadeSpeed = 10;
     AudioSource sfx;
 
 

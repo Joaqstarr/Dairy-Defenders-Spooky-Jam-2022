@@ -3,7 +3,12 @@ guid: db618c71385a9394188b25897a5cd2d6
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barn
+    second: {fileID: 2100000, guid: 0424bef1e6af90441bab743d14bf19ad, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -7,6 +7,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: UFOlightmat
+    second: {fileID: 2100000, guid: b40ac0b08201a834ca935a9408e4abb1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: UFOmat
     second: {fileID: 2100000, guid: 1825e1d36e7c0ca4d9c90ffd4209998e, type: 2}
   - first:
