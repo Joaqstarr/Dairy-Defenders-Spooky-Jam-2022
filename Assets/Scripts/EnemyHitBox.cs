@@ -20,8 +20,11 @@ public class EnemyHitBox : MonoBehaviour
         sfx.clip = explode;
         sfx.Play();
         transform.GetChild(0).gameObject.SetActive(false);
-            //can add death particle
-            deathParticle = (GameObject)(Instantiate(deathParticle, particleHolder.transform.position, Quaternion.identity));
+        gameObject.GetComponent<ufoHover>().enabled = false;
+        transform.GetChild(1).gameObject.SetActive(false);
+
+        //can add death particle
+        deathParticle = (GameObject)(Instantiate(deathParticle, particleHolder.transform.position, Quaternion.identity));
             Destroy(deathParticle, 2.8f);
             Destroy(gameObject, 5f);
     }
